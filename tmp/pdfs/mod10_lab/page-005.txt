@@ -1,0 +1,23 @@
+3.2 Temperature and Seed
+Experiment with different settings for the two parameters affecting the determinism of
+the output that we discussed in class: temperature and seed
+The script llm/generate.py sends the same prompt to the model several times and
+prints each response. It accepts --temperature/-t, --seed/-s, and --iterations/-i.
+3.2.1 Experiments
+Run the following experiments and discuss these questions:
+• What does the temperature do?
+• What does the seed do?
+• How do temperature and seed interact?
+(a) Set the temperature to 0 and vary the seed:
+Terminal Session bash
+user@host$ python generate.py -t 0 -i 3
+user@host$ python generate.py -t 0 -s 1 -i 3
+user@host$ python generate.py -t 0 -s 999 -i 3
+(b) Do not set a temperature, but fix a seed:
+Terminal Session bash
+user@host$ python generate.py -s 42 -i 3
+(c) Fix a seed and change the temperature:
+Terminal Session bash
+user@host$ python generate.py -s 42 -t 0.7 -i 3
+user@host$ python generate.py -s 42 -t 1.5 -i 3
+5

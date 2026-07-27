@@ -1,0 +1,15 @@
+Long-Term Reproducibility
+Be independent of updates to external components, because…
+• Base system details change (package versions, etc.)
+• System runtime configuration (beyond distro and kernel versions) changes
+• GitHub repositories disappear
+• Projects move between hosts (Sourceforge, GitHub, …)
+• External software is no longer maintained, download links disappear
+•
+…
+Goal: Build self-contained, complete environments
+Be ready to build your stuff even when you are trapped on an island
+without internet access, or 20 years after all the repositories have gone
+https://stackify.com/docker-image-vs-container-everything-you-need-to-know/
+Stefanie Scherzinger
+15

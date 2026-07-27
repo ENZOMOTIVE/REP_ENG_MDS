@@ -1,0 +1,25 @@
+Mini Tutorial: End-to-End
+sqpolite
+PLEASE SELECT…
+FROM…
+WHERE…
+SELECT…
+FROM…
+WHERE…
+tpch-sqlite
+dbgen
+paper
+pplease
+xxxx
+Query result y y
+y y
+xxxx
+z z
+z z
+Query
+Result
+Expected
+Result
+./doall.sh docker
+Stefanie Scherzinger
+12

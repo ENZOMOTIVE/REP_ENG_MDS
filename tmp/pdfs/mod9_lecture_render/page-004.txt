@@ -1,0 +1,25 @@
+RepEng In-Class Exercise Sheet 9 - Page 4 of 9
+5. A prompt can be decomposed into several components, each playing a different role. For
+each example segment below, name the role the component plays.
+Example segment in the prompt Component
+“You are an expert research software engineer.”
+“Extract the software, datasets, and hardware used in the
+paper below.”
+“Focus on the points needed to reproduce the experiment.”
+“Answer with a JSON object, using one property per item.”
+“The output is for reviewers assessing reproducibility.”
+“Keep the JSON values concise and factual.”
+“Paper: <text of the paper. . . >”
+6. There are different approaches to ensure that an LLM follows a certain output structure.
+Match a technique name to each description.
+Technique Name Description
+Show the model correctly formatted outputs so it imitates
+the format. Simple, but no guarantee.
+Supply the output skeleton yourself (e.g. the JSON keys
+and braces) and let the model generate only the values
+it does not know beforehand. The scaffolding cannot be
+malformed because the model never emits it.
+Restrict generation to tokens allowed by a gram-
+mar/schema, so the output is valid by construction.
+Validate the output (e.g. against a JSON Schema); on
+failure, re-prompt or ask another tool/model to repair it.

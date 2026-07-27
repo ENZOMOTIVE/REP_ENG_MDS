@@ -1,0 +1,35 @@
+RepEng In-Class Exercise Sheet 9 - Page 8 of 9
+6 client = OpenAI(api_key=_________________________________) # (1)
+11. Fill in the blanks in the following Python script that performs text generation via the Ope-
+nAI API.
+1 import os
+2 from openai import OpenAI
+3
+4 # Never hard-code the key: read it from the environment.
+5
+7
+10 11 12 13 14
+15 16
+17 18
+19 20
+21 22 )
+23
+24 8 response = client.chat.completions.create(
+9 model = "gpt-5.5"
+,
+# Turn off reasoning to enable temperature parameter
+reasoning_effort = "none"
+,
+messages = [
+{"role": "developer"
+,
+"content": "You are a helpful assistant.
+"},
+{"role": "user"
+,
+"content": "Define reproducibility in one sentence.
+"},
+],
+______________=0.0, # (2) most deterministic decoding
+______________=42, # (3) reproducible sampling
+print(response.__________________________) # (4) the generated text

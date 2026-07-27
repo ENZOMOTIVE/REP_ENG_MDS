@@ -1,0 +1,34 @@
+clone https://student:NnqjHbBKuynRapzsDeMk@git.fim.uni-passau.de/koehnen/icde2021_demo_paper.git
+clone https://student:NnqjHbBKuynRapzsDeMk@git.fim.uni-passau.de/koehnen/icde2021_demo_paper.git
+git.fim.uni-passau.de/koehnen/icde2021_demo_paper
+Mini Tutorial: Packaging Artefacts
+git.fim.uni-passau.de/koehnen/icde2021_demo_paper
+git.fim.uni-passau.de/koehnen/icde2021_demo_paper
+git.fim.uni-passau.de/koehnen/icde2021_demo_paper
+git.fim.uni-passau.de/koehnen/icde2021_demo_paper
+git.fim.uni-passau.de/koehnen/icde2021_demo_paper
+PLEASE SELECT…
+FROM…
+WHERE…
+sqpolite
+SELECT…
+FROM…
+WHERE…
+tpch-sqlite
+dbgen
+paper
+pplease
+xxxx
+Query result y y
+y y
+xxxx
+z z
+z z
+Query
+Result
+Expected
+Result
+https://github.com/lovasoa/TPCH-sqlite
+https://github.com/lovasoa/tpch-dbgen
+Stefanie Scherzinger
+8

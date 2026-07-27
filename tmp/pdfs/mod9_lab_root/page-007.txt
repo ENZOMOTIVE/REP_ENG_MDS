@@ -1,0 +1,32 @@
+(c) Consider the following JSON Schema (draft 2020-12), which uses oneOf:
+schema.json
+{
+"type": "object",
+"required": ["hero", "level"],
+"properties": {
+"hero": { "type": "string" },
+"level": { "type": "integer", "minimum": 1, "maximum": 100 },
+"gadget": { "type": "string" },
+"mutation": { "type": "string" }
+},
+"oneOf": [
+{ "required": ["gadget"] },
+{ "required": ["mutation"] }
+]
+}
+How many of the following instances are valid for this schema?
+(1) {"hero":"Volt","level":42,"gadget":"taser"}
+(2) {"hero":"Blaze","level":9,"mutation":"fire"}
+(3) {"hero":"Rex","level":50,"gadget":"claw","mutation":"speed"}
+(4) {"hero":"Zed","level":0,"gadget":"net"}
+◦ 0 ◦ 1 ◦ 2 ◦ 3 ◦ 4
+(d) Using the same schema as in the previous question, how many of the following
+instances are valid for the schema?
+(1) {"hero":"Nova","level":100,"mutation":"gravity"}
+(2) {"hero":"Gale","level":30,"gadget":"boots","city":"Metro"}
+(3) {"hero":"Ping","level":25}
+(4) {"hero":"Ace","level":77,"mutation":"cloak"}
+◦ 0 ◦ 1 ◦ 2 ◦ 3 ◦ 4
+Production of this lecture material was partly financially supported by Lehrinnovationspool 2.0/2021-2022 at the University
+of Passau. Parts of the content were developed in collaboration with Wolfgang Mauerer, OTH Regensburg, Germany.
+7

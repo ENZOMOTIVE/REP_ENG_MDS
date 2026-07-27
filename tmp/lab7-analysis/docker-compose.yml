@@ -1,0 +1,22 @@
+services:
+  postgres:
+    image: postgres:18.4
+    environment:
+      POSTGRES_DB: benchbase
+      POSTGRES_USER: benchbase
+      POSTGRES_PASSWORD: benchbase
+    ports:
+      - "127.0.0.1:54327:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql
+
+  benchbase:
+    image: benchbase.azurecr.io/benchbase-postgres
+    depends_on:
+      - postgres
+    volumes:
+      - ./config/postgres:/benchbase/config/postgres/lab7:ro
+      - ./results:/benchbase/results
+
+volumes:
+  postgres-data:

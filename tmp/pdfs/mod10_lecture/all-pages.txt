@@ -1,0 +1,43 @@
+===== PAGE 001 =====
+Reproducibility Engineering
+Summer 2026
+Chair of Scalable Database Systems
+Prof. Dr.-Ing. S. Scherzinger
+In-Class Exercise Sheet 10
+This material is originates from the ICDE 2021 tutorial “Nullius in Verba: Reproducibility
+for Database Systems Research, Revisited” by W. Mauerer and S. Scherzinger (material from
+the slides, accompanying article, and reproduction package).
+1. Sometimes, an experiment is not run on the researcher’s laptop, but on some different
+environment. That environment may not even support running Docker containers!
+The challenge is to ensure that building the binaries and analyzing the measured data is
+nevertheless reproducible.
+Label the items in the overall workflow shown below. Assign the terms listed below.
+build artefacts / experiment execution package / run experiments / measured data / gen-
+erate graphs and paper
+Docker container Target platform
+Copy
+.csv
+Copy
+
+===== PAGE 002 =====
+RepEng In-Class Exercise Sheet 10 - Page 2 of 2
+2. Let us consider the technical aspects in greater detail. The illustration below shows depen-
+dencies between artefacts and the temporal flow. Label the numbered steps.
+A −→B, B integrates A
+A= ⇒B, B is produced by A
+Temporal flow
+3
+1
+4
+2
+5
+Label the numbered actions:
+1.
+2.
+3.
+4.
+5.
+3. Next, we discuss the slides introducing the SQPolite project (see accompanying slides,
+available in StudIP) and we walk through the accompanying reproduction package: https:
+//github.com/lfd/icde2021_tutorial.
+

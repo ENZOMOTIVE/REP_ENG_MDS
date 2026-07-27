@@ -1,0 +1,26 @@
+2.2 Pretty-Printing JSON
+JSON data found “in the wild” is frequently stored as a single line, without indentation
+or line breaks. This is space-efficient, but hard to read. Inspect the raw file first:
+Terminal Session bash
+user@container$ cat births.json
+[{"year":2018,"month":"January","male":4500,"female":4300,"total":8800},{"
+year":2018,"month":"February","male":4200,"female":3990,"total":8190},{"
+year":2018,"month":"March","male":4750,"female":4510,"total":9260},{"
+year":2019,"month":"July","male":5100,"female":4860,"total":9960},{"year
+":2019,"month":"August","male":5230,"female":4970,"total":10200},{"year
+":2019,"month":"September","male":4880,"female":4660,"total":9540}]
+We use jq, a lightweight command-line JSON processor, to convert between the repre-
+sentations: pretty-printed and compacted.
+Pretty-printing reformats the document with consistent indentation. The identity filter.
+returns the input unchanged, but jq pretty-prints its output by default:
+Terminal Session bash
+user@container$ jq . births.json > births_pretty.json
+user@container$ cat births_pretty.json
+Compacting is the inverse operation: it strips all insignificant whitespace, producing the
+compact single-line form again. To compact, pass the -c (--compact-output) flag to jq:
+Terminal Session bash
+user@container$ jq -c . births_pretty.json
+Both directions preserve the underlying data; only the formatting changes.
+When is each representation useful?
+Please continue on the next page
+2

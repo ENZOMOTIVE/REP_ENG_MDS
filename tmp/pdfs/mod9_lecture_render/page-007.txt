@@ -1,0 +1,25 @@
+RepEng In-Class Exercise Sheet 9 - Page 7 of 9
+9. Constrained decoding tools accept only a subset of JSON Schema. Fill in the table, com-
+paring the support of some JSON schema features in structured outputs (constrained de-
+coding) across OpenAI, Anthropic and llama.cpp.
+Feature OpenAI Anthropic llama.cpp
+additional-
+Properties
+Optional
+properties
+minimum,
+maximum
+pattern,
+format
+anyOf
+oneOf
+10. A model call uses constrained decoding with JSON Schema and succeeds. Which state-
+ments are true? Check all that apply.
+⃝ The output is syntactically correct JSON.
+⃝ The output conforms to the declared types and required properties of the schema.
+⃝ The numbers and strings in the output are guaranteed to be factually correct.
+⃝ The output is guaranteed to be free of hallucinated content.
+⃝ Semantic constraints not expressible in the schema (e.g. “end_date after start_date”)
+must still be checked separately.
+⃝ A schema may be rejected or silently altered, because each tool supports only a subset
+of the JSON Schema specification.

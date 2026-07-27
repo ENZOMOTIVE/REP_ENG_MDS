@@ -1,0 +1,22 @@
+3 Reproducible LLM Outputs
+Bydefault, anLLM’soutputisnon-deterministic: thesamepromptcanproducedifferent
+output each time. In this exercise, we look at two request parameters that help us make
+the output deterministic: temperature and seed.
+3.1 Starting the Model Server
+The directory LabSession10/llm/ contains a docker-compose.yml that downloads a
+small LLM (Gemma 3 1B, quantised to Q4_K_M) and serves it with llama.cpp. Its API
+is addressable via the OpenAI specification, so we can use the openai Python client.
+Specifically, we are using the Chat Completions API in this exercise.
+If you are working on narrow-sea, the server is already running.
+If you are working locally, set up the container as follows:
+Terminal Session bash
+user@host$ cd LabSession10/llm
+user@host$ docker compose up -d
+In both cases, the server listens on port 11434 (i.e., the address is 127.0.0.1:11434).
+Next, set up the Python client code:
+Terminal Session bash
+user@host$ python -m venv .venv && . .venv/bin/activate
+user@host$ pip install -r requirements.txt
+In the following, we use the command python. On narrow-sea, use python3.
+On your own machine, it depends on its configurations.
+4

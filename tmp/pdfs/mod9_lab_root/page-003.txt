@@ -1,0 +1,33 @@
+2.3 Querying JSON with jq
+Beyond reformatting, jq can extract and transform data. This is handy when we only
+want to inspect part of a large file.
+1. Print only the month field of every record:
+Terminal Session bash
+user@container$ jq'.[].month' births.json
+2. Count the number of records in the file:
+Terminal Session bash
+user@container$ jq'length' births.json
+3. Select all records of the year 2019 and keep only the month and total:
+Terminal Session bash
+user@container$ jq'.[] | select(.year == 2019) | {month, total}' \
+births.json
+Using these examples as a template, write jq queries of your own that:
+(a) print only the year field of every record;
+(b) print the total for August.
+Note: In the exam, you are not expected to know the jq syntax by heart. However, you
+might need to apply a documented feature (similar to this task).
+2.4 Comparing JSON Documents
+Two JSON documents can look very different – different indentation, a different order of
+the keys within an object – and yet represent exactly the same data.
+Thefilesbirths_reordered.json andbirths.json areequivalent. Theyhavethestruc-
+ture and hold the same data but their formatting differs: births_reordered.json uses
+line breaks and indentation, and within each object the keys appear in another order.
+1. First, compare the two files as they are using diff:
+Terminal Session bash
+user@container$ diff births.json births_reordered.json
+Why is this comparison of little help to decide whether the two files contain the
+same data?
+2. Devise a way to compare the two files that ignores differences in formatting and
+key order.
+Hint: Use jq -S to sort keys within JSON objects.
+3

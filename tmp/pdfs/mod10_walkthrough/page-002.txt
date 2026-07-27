@@ -1,0 +1,10 @@
+Credits
+Material includes joint work with Wolfgang Mauerer (OTH Regensburg):
+• ICDE 2021 tutorial “Nullius in Verba: Reproducibility for Database Systems Research, Revisited.”
+(Mauerer, Scherzinger)
+• Flipped classroom course on “Reproducibility Engineering”,
+jointly taught at OTH Regensburg (Mauerer) and Uni Passau (Scherzinger, Klessinger)
+(videos: https://tinyurl.com/repeng)
+• SEENG@ICSE 2022 paper “Beyond the Badge: Reproducibility Engineering as a Lifetime Skill.”
+(Mauerer, Klessinger, Scherzinger)
+Stefanie Scherzinger 2

@@ -1,0 +1,27 @@
+Reproducibility Engineering
+Summer Term 2026
+Chair of Scalable Database Systems
+Prof. Dr.-Ing. Stefanie Scherzinger, Stefan Klessinger, Christoph Köhnen
+Exercise Sheet 10
+Lab Sessions: July 9/10, 2026
+In this exercise sheet, we look at reproducibility engineering when working with Large
+Language Models (LLMs). Calling an LLM raises three practical questions: how do we
+hand the container an API key without risking to leak it, how do we make a model’s
+output as reproducible as possible, and how do we make sure the output has the structure
+we expect? We work with a small model (Gemma 3 1B) served locally by llama.cpp, so
+everything runs on the CPU requiring only a few GB of RAM.
+1 Preparation
+Forthisexercise,weprovidefilesintheRepEngFIMGitRepository(directoryLabSession10/).
+Update your local repository that you cloned in the first lab session:
+1. Open a terminal in your local repository.
+2. Pull the latest changes using git pull.
+All tasks use Docker and Docker Compose, which you already have installed from the
+previous lab sessions.
+2 Keeping a Secret
+When you call a remote LLM, you authenticate with an API key. Because the key is tied
+to billing and access, it must be kept secret: it should never be hard-coded in the source
+code, copied into an image, or committed to git. Instead, we inject it into the container
+at run time. In LabSession10/secrets/ we provide three small demos that each hand
+a container the same (dummy) key three different ways. They run offline, so no real key
+or network is needed.
+1

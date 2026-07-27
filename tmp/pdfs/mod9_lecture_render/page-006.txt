@@ -1,0 +1,6 @@
+RepEng In-Class Exercise Sheet 9 - Page 6 of 9
+8. You want the model to return a JSON instance that is valid for a given schema. Compare
+the following approaches:
+(A) Pasting the schema into the prompt and asking the LLM to produce a JSON instance
+that is valid for it.
+(B) Using proper constrained decoding (structured outputs).

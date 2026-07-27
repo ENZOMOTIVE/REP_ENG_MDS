@@ -1,0 +1,19 @@
+Reproducibility Engineering
+Summer 2026
+Chair of Scalable Database Systems
+Prof. Dr.-Ing. S. Scherzinger
+In-Class Exercise Sheet 10
+This material is originates from the ICDE 2021 tutorial “Nullius in Verba: Reproducibility
+for Database Systems Research, Revisited” by W. Mauerer and S. Scherzinger (material from
+the slides, accompanying article, and reproduction package).
+1. Sometimes, an experiment is not run on the researcher’s laptop, but on some different
+environment. That environment may not even support running Docker containers!
+The challenge is to ensure that building the binaries and analyzing the measured data is
+nevertheless reproducible.
+Label the items in the overall workflow shown below. Assign the terms listed below.
+build artefacts / experiment execution package / run experiments / measured data / gen-
+erate graphs and paper
+Docker container Target platform
+Copy
+.csv
+Copy

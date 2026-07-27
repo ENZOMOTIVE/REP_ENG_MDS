@@ -1,0 +1,14 @@
+4.3 oneOf vs. anyOf
+Constrained decoding is only as reliable as the translation from schema to grammar,
+and not every tool supports every JSON Schema feature. We provide two schemas in
+structured_outputs/schemas/ that are identical except that one uses oneOf and the
+other anyOf. Convert both to llama.cpp’s GBNF grammar with the provided converter
+script and compare:
+Terminal Session bash
+user@host$ python json_schema_to_grammar.py schemas/number_oneof.json \
+> oneof.gbnf
+user@host$ python json_schema_to_grammar.py schemas/number_anyof.json \
+> anyof.gbnf
+user@host$ diff oneof.gbnf anyof.gbnf
+What does the diff tell you, and what does it imply for reproducibility?
+7

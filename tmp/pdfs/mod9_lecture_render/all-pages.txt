@@ -1,0 +1,195 @@
+===== PAGE 001 =====
+Reproducibility Engineering
+Summer 2026
+Chair of Scalable Database Systems
+Prof. Dr.-Ing. S. Scherzinger, Stefan Klessinger
+In-Class Exercise Sheet 9
+In this lecture, we look at large language models (LLMs) through the lens of reproducibility:
+trade-offs when packaging an experiment that calls an LLM, how to make the generated output
+as repeatable as possible, and limitations w.r.t. reproducibility.
+1. You are using an LLM in your experiment. For the reproduction package you can either
+(i) run an open-weight model locally, inside the container, or (ii) call a remote LLM via an
+API. Compare the two architectures w.r.t. reproducibility by filling in the table.
+Local LLM inside container Remote API
+Self-contained?
+Container/artifact size
+Local hardware
+requirements
+Long-term availability
+Cost to re-run
+Transparency
+2. If you use a remote LLM in your experiments, what can you do to ensure long-term repro-
+ducibility?
+
+===== PAGE 002 =====
+RepEng In-Class Exercise Sheet 9 - Page 2 of 9
+3. When using a remote LLM, an API key is used for authentication and billing. It should
+hence be kept secret. How can you securely provide an API key to the container?
+4. Fill in the blanks in the following text about improving reproducibility of LLM outputs.
+Where the API supports it, ...
+... set the sampling results; higher values increase randomness.
+to 0 to obtain the most (near-)deterministic
+... pass a fixed , to pin the pseudo-random choices used during sampling,
+so that identical requests are sampled the same way.
+Note: With reasoning models like GPT 5.5, these parameters are usually not supported.
+(a) Why is exact (bitwise) reproducibility not guaranteed, even when applying the settings
+above?
+
+===== PAGE 003 =====
+RepEng In-Class Exercise Sheet 9 - Page 3 of 9
+(b) What should therefore go into the reproduction package?
+
+===== PAGE 004 =====
+RepEng In-Class Exercise Sheet 9 - Page 4 of 9
+5. A prompt can be decomposed into several components, each playing a different role. For
+each example segment below, name the role the component plays.
+Example segment in the prompt Component
+“You are an expert research software engineer.”
+“Extract the software, datasets, and hardware used in the
+paper below.”
+“Focus on the points needed to reproduce the experiment.”
+“Answer with a JSON object, using one property per item.”
+“The output is for reviewers assessing reproducibility.”
+“Keep the JSON values concise and factual.”
+“Paper: <text of the paper. . . >”
+6. There are different approaches to ensure that an LLM follows a certain output structure.
+Match a technique name to each description.
+Technique Name Description
+Show the model correctly formatted outputs so it imitates
+the format. Simple, but no guarantee.
+Supply the output skeleton yourself (e.g. the JSON keys
+and braces) and let the model generate only the values
+it does not know beforehand. The scaffolding cannot be
+malformed because the model never emits it.
+Restrict generation to tokens allowed by a gram-
+mar/schema, so the output is valid by construction.
+Validate the output (e.g. against a JSON Schema); on
+failure, re-prompt or ask another tool/model to repair it.
+
+===== PAGE 005 =====
+RepEng In-Class Exercise Sheet 9 - Page 5 of 9
+7. Fill in the orange boxes in the figure below showing an evaluation-retry-loop for LLM-
+based JSON generation.
+Source: “Hands-On Large Language Models” by J. Alammar and M. Grootendorst
+(O’Reilly, 2024).
+
+===== PAGE 006 =====
+RepEng In-Class Exercise Sheet 9 - Page 6 of 9
+8. You want the model to return a JSON instance that is valid for a given schema. Compare
+the following approaches:
+(A) Pasting the schema into the prompt and asking the LLM to produce a JSON instance
+that is valid for it.
+(B) Using proper constrained decoding (structured outputs).
+
+===== PAGE 007 =====
+RepEng In-Class Exercise Sheet 9 - Page 7 of 9
+9. Constrained decoding tools accept only a subset of JSON Schema. Fill in the table, com-
+paring the support of some JSON schema features in structured outputs (constrained de-
+coding) across OpenAI, Anthropic and llama.cpp.
+Feature OpenAI Anthropic llama.cpp
+additional-
+Properties
+Optional
+properties
+minimum,
+maximum
+pattern,
+format
+anyOf
+oneOf
+10. A model call uses constrained decoding with JSON Schema and succeeds. Which state-
+ments are true? Check all that apply.
+⃝ The output is syntactically correct JSON.
+⃝ The output conforms to the declared types and required properties of the schema.
+⃝ The numbers and strings in the output are guaranteed to be factually correct.
+⃝ The output is guaranteed to be free of hallucinated content.
+⃝ Semantic constraints not expressible in the schema (e.g. “end_date after start_date”)
+must still be checked separately.
+⃝ A schema may be rejected or silently altered, because each tool supports only a subset
+of the JSON Schema specification.
+
+===== PAGE 008 =====
+RepEng In-Class Exercise Sheet 9 - Page 8 of 9
+6 client = OpenAI(api_key=_________________________________) # (1)
+11. Fill in the blanks in the following Python script that performs text generation via the Ope-
+nAI API.
+1 import os
+2 from openai import OpenAI
+3
+4 # Never hard-code the key: read it from the environment.
+5
+7
+10 11 12 13 14
+15 16
+17 18
+19 20
+21 22 )
+23
+24 8 response = client.chat.completions.create(
+9 model = "gpt-5.5"
+,
+# Turn off reasoning to enable temperature parameter
+reasoning_effort = "none"
+,
+messages = [
+{"role": "developer"
+,
+"content": "You are a helpful assistant.
+"},
+{"role": "user"
+,
+"content": "Define reproducibility in one sentence.
+"},
+],
+______________=0.0, # (2) most deterministic decoding
+______________=42, # (3) reproducible sampling
+print(response.__________________________) # (4) the generated text
+
+===== PAGE 009 =====
+RepEng In-Class Exercise Sheet 9 - Page 9 of 9
+1... # Imports, initialize OpenAI API client
+2 schema = {
+"type": "object"
+,
+"properties": {
+"value": {"type": "number"},
+"unit": {"type": "string"},
+7 },
+"required": [________________________________________], # (1)
+"additionalProperties": _____________, # (2)
+12. Fill in the blanks in the following Python script that performs text generation with struc-
+tured outputs (constrained decoding) via the OpenAI Responses API.
+3
+4
+5
+6
+8
+9
+10
+11 }
+12 13 14 15 16
+17 18
+19
+20
+21
+22
+23
+24 }
+25 },
+26 )
+response = client.responses.create(
+model = "gpt-5.5"
+,
+reasoning = {"effort": "low"},
+input = [{"role": "user"
+,
+"content": "How hot is boiling water at sea level?"}],
+text = {
+"format": {
+"type": "json_schema"
+"name": "measurement"
+"schema": schema,
+,
+,
+"strict": _____________, # (3)
+

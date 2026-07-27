@@ -1,0 +1,12 @@
+RepEng In-Class Exercise Sheet 9 - Page 2 of 9
+3. When using a remote LLM, an API key is used for authentication and billing. It should
+hence be kept secret. How can you securely provide an API key to the container?
+4. Fill in the blanks in the following text about improving reproducibility of LLM outputs.
+Where the API supports it, ...
+... set the sampling results; higher values increase randomness.
+to 0 to obtain the most (near-)deterministic
+... pass a fixed , to pin the pseudo-random choices used during sampling,
+so that identical requests are sampled the same way.
+Note: With reasoning models like GPT 5.5, these parameters are usually not supported.
+(a) Why is exact (bitwise) reproducibility not guaranteed, even when applying the settings
+above?

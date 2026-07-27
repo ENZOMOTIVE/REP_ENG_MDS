@@ -1,0 +1,35 @@
+Mini Tutorial: Packaging Artefacts
+sqpolite
+PLEASE SELECT…
+FROM…
+WHERE…
+SELECT…
+FROM…
+WHERE…
+tpch-sqlite
+dbgen
+paper
+pplease
+xxxx
+Query result y y
+y y
+xxxx
+z z
+z z
+Query
+Result
+Expected
+Result
+forked
+project
+https://github.com/lfd/sqlite
+https://github.com/sqlite/sqlite
+Fork inherits commit history
+of the upstream project,
+and preserves the attribution.
+Later, we may even rebase our changes
+onto a newer commit in the upstream project.
+upstream
+project
+Stefanie Scherzinger
+5

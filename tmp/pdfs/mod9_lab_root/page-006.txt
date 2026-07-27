@@ -1,0 +1,25 @@
+3 JSON and JSON Schema (Antwort-Wahl-Verfahren)
+In this task, each question has exactly one correct answer. Mark the correct answer.
+(a) Consider the following JSON Schema (draft 2020-12):
+schema.json
+{
+"type": "object",
+"additionalProperties": false,
+"required": ["id", "score"],
+"properties": {
+"id": { "type": "integer", "minimum": 1 },
+"name": { "type": "string" },
+"score": { "type": "number", "minimum": 0, "maximum": 100 }
+}
+}
+How many of the following instances are valid for this schema?
+(1) {"id":1,"name":"Ada","score":90} (2) {"id":0,"name":"Bob","score":50}
+(3) {"id":3,"name":"Cy","score":80,"x":1} (4) {"id":4,"score":100}
+◦ 0 ◦ 1 ◦ 2 ◦ 3 ◦ 4
+(b) Using the same schema as in the previous question, how many of the following
+instances are valid for the schema?
+(1) {"id":5,"score":95} (2) {"id":6,"name":"Finn","score":"95"}
+(3) {"id":7,"name":"Gus","score":60.5} (4) {"id":8,"name":"Hank","score":0}
+◦ 0 ◦ 1 ◦ 2 ◦ 3 ◦ 4
+Please continue on the next page
+6

@@ -1,0 +1,33 @@
+2.1 Secrets in an Environment Variable
+The first approach passes the key as an environment variable. Inside the directory
+LabSession 10, enter secrets/1-env-var/ and store the API key as a variable:
+Terminal Session bash
+user@host$ cd secrets/1-env-var
+user@host$ export OPENAI_API_KEY=sk-demo-1234567890abcdef
+(a) Build the image from the Dockerfile and add the tag env-demo-img. Then run
+the container, name it env-demo-1, and pass the stored variable as an environment
+variable by adding -e to the run command.
+(b) The container reads the key from its environment. Now inspect where that value
+is visible. What does the following command reveal?
+Terminal Session bash
+user@host$ docker inspect env-demo-1 2>/dev/null | grep -i openai
+(c) Run the container using Docker Compose.
+(d) Inspect again where the key value is visible. What does the following command
+reveal?
+Terminal Session bash
+user@host$ docker inspect env-demo 2>/dev/null | grep -i openai
+2.2 Secrets in a .env File
+Putting the key on the command line (or into compose.yaml) is easy to leak – it lands
+in your shell history or in a file you might commit. An .env file keeps the value in one
+place. Enter secrets/2-dotenv/ and store the API key in a .env file by copying it from
+the provided file .env.example.
+Terminal Session bash
+user@host$ cd secrets/2-dotenv
+user@host$ cp .env.example .env
+(a) Run the container using Docker Compose.
+(b) Inspect where the API key is visible. What does the following command reveal?
+Terminal Session bash
+user@host$ docker inspect dotenv-demo 2>/dev/null | grep -i openai
+(c) Compare this with the previous approach: inside the container, is the key stored
+any differently than in Exercise 2.1? What did the .env file improve?
+2

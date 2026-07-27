@@ -1,0 +1,5 @@
+RepEng In-Class Exercise Sheet 9 - Page 5 of 9
+7. Fill in the orange boxes in the figure below showing an evaluation-retry-loop for LLM-
+based JSON generation.
+Source: “Hands-On Large Language Models” by J. Alammar and M. Grootendorst
+(O’Reilly, 2024).

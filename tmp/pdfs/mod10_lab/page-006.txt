@@ -1,0 +1,31 @@
+4 Structured Outputs
+Often we need the model’s answer in a specific shape, e.g., a JSON instance matching
+a given schema. There are two ways to achieve this. We can put the schema in the
+prompt and hope the model complies, or we can use constrained decoding (structured
+outputs), where the tool restricts generation to tokens allowed by a grammar derived
+from the schema, so the output is valid by construction. Both variants are provided in
+the directory LabSession10/structured_outputs/; the server from Exercise 3 must be
+running.
+Both scripts ask for the smallest number that satisfies the same schema:
+schema
+{
+"type": "integer",
+"anyOf": [
+{ "type": "integer", "minimum": 3, "maximum": 1 },
+{ "type": "integer", "minimum": 12000, "maximum": 12002 }
+]
+}
+The first branch (minimum: 3, maximum: 1) can never be satisfied, so the only valid
+instances are 12000, 12001, and 12002; the smallest valid answer is 12000.
+4.1 Schema in the Prompt
+Run the prompt-only variant a few times:
+Terminal Session bash
+user@host$ python schema_in_prompt.py -i 5
+Does the model always return a valid instance? Why is that not guaranteed?
+4.2 Constrained Decoding
+Now run the structured-outputs variant, which passes the schema via response_format
+so the server enforces it during decoding:
+Terminal Session bash
+user@host$ python structured_output.py -i 5
+How does the result differ, and what exactly is now guaranteed?
+6

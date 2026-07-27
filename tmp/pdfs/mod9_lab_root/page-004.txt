@@ -1,0 +1,26 @@
+2.5 Writing JSON Schema
+JSON Schema is a standard to describe the structure a JSON document must follow. A
+JSON document is valid for the schema if it does not violate the structure described by
+the schema.
+WriteaschemainJSONSchemathatspecifiesthestructureyouobservedinbirths.json.
+Create a basic schema for which birth.json is valid: enforce data types and required/op-
+tional properties. Store the schema in a file named births_schema.json.
+2.6 Validating JSON against a Schema
+JSON Schema validators check the validity of a JSON document for a schema.
+(a) Validate births.json against births_schema.json using check-jsonschema1:
+Terminal Session bash
+user@container$ check-jsonschema --schemafile births_schema.json \
+births.json
+1. Run the command above. What does the tool report?
+2. If the result is not “ok”, refine your schema until the document is valid for it.
+(b) The repository also contains births_broken_1.json and births_broken_2.json,
+in which some records violate the usual structure.
+1. Validate births_broken_1.json against the schema.
+2. If the result is “ok”, refine your schema until the document is invalid for it,
+while making sure that births.json remains valid for the schema.
+3. If the result is not “ok”, how does the tool react, and what does the error
+message tell you?
+4. Repeat the steps above for births_broken_2.json
+Please continue on the next page
+1https://check-jsonschema.readthedocs.io/
+4

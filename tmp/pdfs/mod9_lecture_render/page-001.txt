@@ -1,0 +1,21 @@
+Reproducibility Engineering
+Summer 2026
+Chair of Scalable Database Systems
+Prof. Dr.-Ing. S. Scherzinger, Stefan Klessinger
+In-Class Exercise Sheet 9
+In this lecture, we look at large language models (LLMs) through the lens of reproducibility:
+trade-offs when packaging an experiment that calls an LLM, how to make the generated output
+as repeatable as possible, and limitations w.r.t. reproducibility.
+1. You are using an LLM in your experiment. For the reproduction package you can either
+(i) run an open-weight model locally, inside the container, or (ii) call a remote LLM via an
+API. Compare the two architectures w.r.t. reproducibility by filling in the table.
+Local LLM inside container Remote API
+Self-contained?
+Container/artifact size
+Local hardware
+requirements
+Long-term availability
+Cost to re-run
+Transparency
+2. If you use a remote LLM in your experiments, what can you do to ensure long-term repro-
+ducibility?

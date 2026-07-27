@@ -1,0 +1,37 @@
+2.7 Reproducible Validation with Containers: Bowtie
+We just validated our data with one validator. But the JSON Schema specification is
+complex, and different validators do not always agree: they may support different subsets
+of the specification, contain bugs, or change their behavior between versions. For a result
+to be reproducible, it is not enough to say “the data is valid” – we must also specify which
+validator, in which exact version, produced that verdict.
+The framework Bowtie addresses this issue. It is a meta-validator : rather than validating
+itself, it runs JSON Schema validators and collects their results. Each validator runs
+inside its own Docker container. The container image, identified by a name and tag,
+freezes a validator with all necessary dependencies at a specific version. Re-running the
+same image later yields the same validator, and thus a reproducible result.
+Bowtie orchestrates these containers itself, so we run it on the host, not inside the
+lab9-json container. Install it by following the instructions in the online documen-
+tation2. Note that the latest version of Bowtie requires at least Python 3.133; with older
+Python versions, some of the commands below might not be available.
+After installing Bowtie, perform the following steps:
+1. List the supported implementations. Each entry corresponds to a container image:
+Terminal Session bash
+user@host$ bowtie filter-implementations
+2. Validate births.json against births_schema.json using the Python implemen-
+tation python-jsonschema, and summarise the result. The first run pulls the val-
+idator’s container image:
+Terminal Session bash
+user@host$ bowtie validate -i python-jsonschema \
+births_schema.json births.json | bowtie summary
+Hint: Ensure that both births.json and births_schema.json are in your current
+working directory.
+3. Now run the same schema and instance against a second implementation written
+in another language, for example js-ajv, and compare:
+Terminal Session bash
+user@host$ bowtie validate -i python-jsonschema -i js-ajv \
+births_schema.json births.json | bowtie summary
+Explain, in terms of reproducibility, why running the validator inside a pinned container
+image is preferable to installing a validator directly on your machine.
+2https://docs.bowtie.report/en/stable/
+3In uv, you can specify the Python version: uv tool install bowtie-json-schema --python 3.13
+5

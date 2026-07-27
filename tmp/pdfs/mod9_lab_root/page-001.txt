@@ -1,0 +1,26 @@
+Reproducibility Engineering
+Summer Term 2026
+Chair of Scalable Database Systems
+Prof. Dr.-Ing. Stefanie Scherzinger, Stefan Klessinger, Christoph Köhnen
+Exercise Sheet 9
+Lab Sessions: July 2/3, 2026
+In this exercise sheet, we work with JSON, a hierarchical data format that is central to
+storing and exchanging (research) data.
+1 Preparation
+Forthisexercise,weprovidefilesintheRepEngFIMGitRepository(directoryLabSession9/).
+Update your local repository that you cloned in the first lab session:
+1. Open a terminal in your local repository.
+2. Pull the latest changes using git pull.
+2 JSON and JSON Schema
+Consider data about births: for each month of a year, we record the number of male,
+female, and total births. The file births.json stores these observations as a JSON array,
+with one object per month.
+2.1 Docker Environment
+The directory LabSession9/ contains a Dockerfile that installs the command-line
+tools used in the first part of this sheet, together with the data files births.json and
+births_schema.json. Build the image and start a temporary interactive container:
+Terminal Session bash
+user@host$ cd LabSession9
+user@host$ docker build -t lab9-json .
+user@host$ docker run -it lab9-json
+1

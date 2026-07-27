@@ -1,0 +1,25 @@
+Mini Tutorial: Packaging Artefacts
+sqpolite
+PLEASE SELECT…
+FROM…
+WHERE…
+SELECT…
+FROM…
+WHERE…
+tpch-sqlite
+dbgen
+paper
+pplease
+xxxx
+Query result y y
+y y
+xxxx
+z z
+z z
+Query
+Result
+Expected
+Result
+icde2021_tutorial
+Stefanie Scherzinger
+10

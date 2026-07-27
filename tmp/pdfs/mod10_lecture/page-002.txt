@@ -1,0 +1,20 @@
+RepEng In-Class Exercise Sheet 10 - Page 2 of 2
+2. Let us consider the technical aspects in greater detail. The illustration below shows depen-
+dencies between artefacts and the temporal flow. Label the numbered steps.
+A −→B, B integrates A
+A= ⇒B, B is produced by A
+Temporal flow
+3
+1
+4
+2
+5
+Label the numbered actions:
+1.
+2.
+3.
+4.
+5.
+3. Next, we discuss the slides introducing the SQPolite project (see accompanying slides,
+available in StudIP) and we walk through the accompanying reproduction package: https:
+//github.com/lfd/icde2021_tutorial.

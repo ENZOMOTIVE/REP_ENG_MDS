@@ -1,0 +1,348 @@
+===== PAGE 001 =====
+Reproducibility Engineering
+in Data Management Research
+Stefanie Scherzinger
+
+===== PAGE 002 =====
+Credits
+Material includes joint work with Wolfgang Mauerer (OTH Regensburg):
+• ICDE 2021 tutorial “Nullius in Verba: Reproducibility for Database Systems Research, Revisited.”
+(Mauerer, Scherzinger)
+• Flipped classroom course on “Reproducibility Engineering”,
+jointly taught at OTH Regensburg (Mauerer) and Uni Passau (Scherzinger, Klessinger)
+(videos: https://tinyurl.com/repeng)
+• SEENG@ICSE 2022 paper “Beyond the Badge: Reproducibility Engineering as a Lifetime Skill.”
+(Mauerer, Klessinger, Scherzinger)
+Stefanie Scherzinger 2
+
+===== PAGE 003 =====
+Mini Tutorial: Packaging Artefacts
+sqpolite
+PLEASE SELECT…
+FROM…
+WHERE…
+SELECT…
+FROM…
+WHERE…
+tpch-sqlite
+dbgen
+paper
+pplease
+xxxx
+Query result y y
+y y
+xxxx
+z z
+z z
+Query
+Result
+Expected
+Result
+Stefanie Scherzinger
+3
+
+===== PAGE 004 =====
+Mini Tutorial: Packaging Artefacts
+sqpolite
+PLEASE SELECT…
+FROM…
+WHERE…
+SELECT…
+FROM…
+WHERE…
+tpch-sqlite
+dbgen
+paper
+pplease
+xxxx
+Query result y y
+y y
+xxxx
+z z
+z z
+Query
+Result
+Expected
+Result
+forked
+project
+https://github.com/lfd/sqlite
+https://github.com/sqlite/sqlite
+upstream
+project
+Stefanie Scherzinger
+4
+
+===== PAGE 005 =====
+Mini Tutorial: Packaging Artefacts
+sqpolite
+PLEASE SELECT…
+FROM…
+WHERE…
+SELECT…
+FROM…
+WHERE…
+tpch-sqlite
+dbgen
+paper
+pplease
+xxxx
+Query result y y
+y y
+xxxx
+z z
+z z
+Query
+Result
+Expected
+Result
+forked
+project
+https://github.com/lfd/sqlite
+https://github.com/sqlite/sqlite
+Fork inherits commit history
+of the upstream project,
+and preserves the attribution.
+Later, we may even rebase our changes
+onto a newer commit in the upstream project.
+upstream
+project
+Stefanie Scherzinger
+5
+
+===== PAGE 006 =====
+Mini Tutorial: Packaging Artefacts
+sqpolite
+PLEASE SELECT…
+FROM…
+WHERE…
+SELECT…
+FROM…
+WHERE…
+tpch-sqlite
+dbgen
+paper
+pplease
+xxxx
+Query result y y
+y y
+xxxx
+z z
+z z
+Query
+Result
+Expected
+Result
+forked
+project
+https://github.com/lfd/sqlite
+https://github.com/sqlite/sqlite
+upstream
+project
+Stefanie Scherzinger
+6
+
+===== PAGE 007 =====
+Mini Tutorial: Packaging Artefacts
+sqpolite
+PLEASE SELECT…
+FROM…
+WHERE…
+SELECT…
+FROM…
+WHERE…
+tpch-sqlite
+dbgen
+paper
+pplease
+xxxx
+Query result y y
+y y
+xxxx
+z z
+z z
+Query
+Result
+Expected
+Result
+Patch clearly documents our changes
+to the third-party code.
+Applying patches can be automated.
+This format is very simple, stable,
+timeless, and does not even rely on git.
+https://github.com/lovasoa/TPCH-sqlite
+https://github.com/lovasoa/tpch-dbgen
+TPCH-sqlite.diff
+Stefanie Scherzinger
+7
+
+===== PAGE 008 =====
+clone https://student:NnqjHbBKuynRapzsDeMk@git.fim.uni-passau.de/koehnen/icde2021_demo_paper.git
+clone https://student:NnqjHbBKuynRapzsDeMk@git.fim.uni-passau.de/koehnen/icde2021_demo_paper.git
+git.fim.uni-passau.de/koehnen/icde2021_demo_paper
+Mini Tutorial: Packaging Artefacts
+git.fim.uni-passau.de/koehnen/icde2021_demo_paper
+git.fim.uni-passau.de/koehnen/icde2021_demo_paper
+git.fim.uni-passau.de/koehnen/icde2021_demo_paper
+git.fim.uni-passau.de/koehnen/icde2021_demo_paper
+git.fim.uni-passau.de/koehnen/icde2021_demo_paper
+PLEASE SELECT…
+FROM…
+WHERE…
+sqpolite
+SELECT…
+FROM…
+WHERE…
+tpch-sqlite
+dbgen
+paper
+pplease
+xxxx
+Query result y y
+y y
+xxxx
+z z
+z z
+Query
+Result
+Expected
+Result
+https://github.com/lovasoa/TPCH-sqlite
+https://github.com/lovasoa/tpch-dbgen
+Stefanie Scherzinger
+8
+
+===== PAGE 009 =====
+Mini Tutorial: Packaging Artefacts
+sqpolite
+PLEASE SELECT…
+FROM…
+WHERE…
+SELECT…
+FROM…
+WHERE…
+tpch-sqlite
+dbgen
+paper
+pplease
+xxxx
+Query result y y
+y y
+xxxx
+z z
+z z
+Query
+Result
+Expected
+Result
+icde2021_demo_paper
+Stefanie Scherzinger
+9
+
+===== PAGE 010 =====
+Mini Tutorial: Packaging Artefacts
+sqpolite
+PLEASE SELECT…
+FROM…
+WHERE…
+SELECT…
+FROM…
+WHERE…
+tpch-sqlite
+dbgen
+paper
+pplease
+xxxx
+Query result y y
+y y
+xxxx
+z z
+z z
+Query
+Result
+Expected
+Result
+icde2021_tutorial
+Stefanie Scherzinger
+10
+
+===== PAGE 011 =====
+Mini Tutorial: Packaging Artefacts
+sqpolite
+PLEASE SELECT…
+FROM…
+WHERE…
+SELECT…
+FROM…
+WHERE…
+tpch-sqlite
+dbgen
+paper
+pplease
+xxxx
+Query result y y
+y y
+xxxx
+z z
+z z
+Query
+Result
+Expected
+Result
+Stefanie Scherzinger
+11
+
+===== PAGE 012 =====
+Mini Tutorial: End-to-End
+sqpolite
+PLEASE SELECT…
+FROM…
+WHERE…
+SELECT…
+FROM…
+WHERE…
+tpch-sqlite
+dbgen
+paper
+pplease
+xxxx
+Query result y y
+y y
+xxxx
+z z
+z z
+Query
+Result
+Expected
+Result
+./doall.sh docker
+Stefanie Scherzinger
+12
+
+===== PAGE 013 =====
+Gold-Standard, End-to-End Reproducibility
+Stefanie Scherzinger
+13
+
+===== PAGE 014 =====
+Mini Tutorial: Generating PDFs
+Stefanie Scherzinger
+14
+
+===== PAGE 015 =====
+Long-Term Reproducibility
+Be independent of updates to external components, because…
+• Base system details change (package versions, etc.)
+• System runtime configuration (beyond distro and kernel versions) changes
+• GitHub repositories disappear
+• Projects move between hosts (Sourceforge, GitHub, …)
+• External software is no longer maintained, download links disappear
+•
+…
+Goal: Build self-contained, complete environments
+Be ready to build your stuff even when you are trapped on an island
+without internet access, or 20 years after all the repositories have gone
+https://stackify.com/docker-image-vs-container-everything-you-need-to-know/
+Stefanie Scherzinger
+15
+

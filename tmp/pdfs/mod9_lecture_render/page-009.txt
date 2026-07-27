@@ -1,0 +1,46 @@
+RepEng In-Class Exercise Sheet 9 - Page 9 of 9
+1... # Imports, initialize OpenAI API client
+2 schema = {
+"type": "object"
+,
+"properties": {
+"value": {"type": "number"},
+"unit": {"type": "string"},
+7 },
+"required": [________________________________________], # (1)
+"additionalProperties": _____________, # (2)
+12. Fill in the blanks in the following Python script that performs text generation with struc-
+tured outputs (constrained decoding) via the OpenAI Responses API.
+3
+4
+5
+6
+8
+9
+10
+11 }
+12 13 14 15 16
+17 18
+19
+20
+21
+22
+23
+24 }
+25 },
+26 )
+response = client.responses.create(
+model = "gpt-5.5"
+,
+reasoning = {"effort": "low"},
+input = [{"role": "user"
+,
+"content": "How hot is boiling water at sea level?"}],
+text = {
+"format": {
+"type": "json_schema"
+"name": "measurement"
+"schema": schema,
+,
+,
+"strict": _____________, # (3)

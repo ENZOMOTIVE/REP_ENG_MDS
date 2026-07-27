@@ -1,0 +1,18 @@
+2.3 Secrets in a Mounted Secret File
+In this approach, we mount the key as a read-only file and have the application read that
+file. Enter secrets/3-mounted-file/, create a directory secrets/ and store an API
+key sk-mounted-file-demo-1234567890abcdef in a file secrets/openai_api_key.
+(a) Run the container using Docker Compose.
+(b) Inspect where the API key is visible. What does the following command reveal?
+Terminal Session bash
+user@host$ docker inspect mounted-file-demo-1 2>/dev/null | grep -i \
+openai
+(c) Inside the container, is the key stored any differently than in the previous exercises?
+What did the openai_api_key file improve?
+2.4 Preventing Accidents
+The approaches in Exercises 2.2 and 2.3 do not help if the secret slips into git or into the
+image by accident.
+(a) Which files in secrets/ must never be committed, and how do we enforce that?
+(b) How do we keep the same files out of the Docker build context (and thus out of the
+image)?
+3
