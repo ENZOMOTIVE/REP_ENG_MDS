@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="title desc">
+  <title id="title">Reproducibility Engineering learning pipeline</title>
+  <desc id="desc">An animated path connecting data, code, environment, execution, verification, and sharing.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07152f"/>
+      <stop offset="0.52" stop-color="#14295b"/>
+      <stop offset="1" stop-color="#321a58"/>
+    </linearGradient>
+    <linearGradient id="pipeline" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5ee7df"/>
+      <stop offset="0.5" stop-color="#7d8cff"/>
+      <stop offset="1" stop-color="#f779d0"/>
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="0.25" stop-color="#8cf9ff" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#8cf9ff" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#ffffff" stroke-opacity="0.055" stroke-width="1"/>
+    </pattern>
+    <filter id="softGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <path id="route" d="M112 205 C245 153 347 257 480 205 S715 153 848 205 S1005 257 1090 205"/>
+  </defs>
+
+  <style>
+    .route-dashes { animation: dash 5s linear infinite; }
+    .float-a { animation: float-a 7s ease-in-out infinite; }
+    .float-b { animation: float-b 9s ease-in-out infinite; }
+    @keyframes dash { to { stroke-dashoffset: -72; } }
+    @keyframes float-a { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-11px); } }
+    @keyframes float-b { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(9px); } }
+  </style>
+
+  <rect width="1200" height="300" rx="28" fill="url(#background)"/>
+  <rect width="1200" height="300" rx="28" fill="url(#grid)"/>
+  <circle class="float-a" cx="1040" cy="54" r="84" fill="#f779d0" opacity="0.08"/>
+  <circle class="float-b" cx="154" cy="265" r="110" fill="#5ee7df" opacity="0.07"/>
+
+  <text x="600" y="67" text-anchor="middle" fill="#ffffff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="38" font-weight="750" letter-spacing="2.2">REPRODUCIBILITY ENGINEERING</text>
+  <text x="600" y="104" text-anchor="middle" fill="#cbd8ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" letter-spacing="1.25">11 MODULES  ·  ONE NAVIGABLE KNOWLEDGE BASE  ·  RESULTS YOU CAN TRUST</text>
+
+  <use href="#route" fill="none" stroke="#8da2d8" stroke-opacity="0.32" stroke-width="8" stroke-linecap="round"/>
+  <use class="route-dashes" href="#route" fill="none" stroke="url(#pipeline)" stroke-width="3" stroke-linecap="round" stroke-dasharray="14 10"/>
+
+  <g font-family="Inter,Segoe UI,Arial,sans-serif" text-anchor="middle">
+    <g transform="translate(112 205)">
+      <circle r="24" fill="#0d2348" stroke="#5ee7df" stroke-width="3"/>
+      <circle r="9" fill="#5ee7df"/>
+      <text y="48" fill="#e9f4ff" font-size="14" font-weight="700">DATA</text>
+    </g>
+    <g transform="translate(307 196)">
+      <circle r="24" fill="#10244d" stroke="#65d9ec" stroke-width="3"/>
+      <path d="M-10 -6 L-17 0 -10 6 M10 -6 L17 0 10 6" fill="none" stroke="#9ff4ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <text y="57" fill="#e9f4ff" font-size="14" font-weight="700">CODE</text>
+    </g>
+    <g transform="translate(503 210)">
+      <circle r="24" fill="#172754" stroke="#798dff" stroke-width="3"/>
+      <path d="M-12 -9 H12 V9 H-12 Z M-12 -2 H12" fill="none" stroke="#b4bdff" stroke-width="2.5"/>
+      <text y="43" fill="#e9f4ff" font-size="14" font-weight="700">ENVIRONMENT</text>
+    </g>
+    <g transform="translate(700 195)">
+      <circle r="24" fill="#202451" stroke="#9b7fff" stroke-width="3"/>
+      <path d="M-6 -11 L12 0 -6 11 Z" fill="#d2c6ff"/>
+      <text y="58" fill="#e9f4ff" font-size="14" font-weight="700">EXECUTE</text>
+    </g>
+    <g transform="translate(895 210)">
+      <circle r="24" fill="#292047" stroke="#d079ee" stroke-width="3"/>
+      <path d="M-12 0 L-4 8 13 -10" fill="none" stroke="#ffd1f2" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <text y="43" fill="#e9f4ff" font-size="14" font-weight="700">VERIFY</text>
+    </g>
+    <g transform="translate(1090 205)">
+      <circle r="24" fill="#321d46" stroke="#f779d0" stroke-width="3"/>
+      <path d="M-11 6 L0 -10 11 6 M0 -10 V13" fill="none" stroke="#ffd1ed" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <text y="48" fill="#e9f4ff" font-size="14" font-weight="700">SHARE</text>
+    </g>
+  </g>
+
+  <circle r="30" fill="url(#glow)" opacity="0.75" filter="url(#softGlow)">
+    <animateMotion dur="5.5s" repeatCount="indefinite" rotate="auto">
+      <mpath href="#route"/>
+    </animateMotion>
+  </circle>
+  <circle r="5" fill="#ffffff" filter="url(#softGlow)">
+    <animateMotion dur="5.5s" repeatCount="indefinite" rotate="auto">
+      <mpath href="#route"/>
+    </animateMotion>
+  </circle>
+</svg>
